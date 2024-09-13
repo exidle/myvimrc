@@ -10,7 +10,9 @@ set shiftwidth=4           " Number of spaces to use for autoindent.
 
 set backspace=2            " Fix backspace behavior on most terminals.
 
-colorscheme murphy         " Change a colorscheme.
+set t_Co=256
+
+" Change a colorscheme.
 
 " => Chapter 2: Advanced Movement and Navigation ---------------------- {{{
 
@@ -55,9 +57,16 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'piec/vim-lsp-clangd'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+"Plug 'epheien/termdbg'
+Plug 'dikiaap/minimalist'
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
+colorscheme minimalist
+let g:airline_theme='minimalist'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 let g:lsp_clangd_ignore_warning = 1 " Ignore clangd not found
 
 function! s:on_lsp_buffer_enabled() abort
